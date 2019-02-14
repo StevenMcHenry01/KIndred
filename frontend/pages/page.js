@@ -6,9 +6,7 @@ class page extends Component {
   render() {
     return (
       <div>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
+        <p>Other Page</p>
       </div>
     )
   }

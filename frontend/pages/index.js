@@ -6,9 +6,7 @@ class index extends Component {
   render() {
     return (
       <div>
-        <Link href="/page">
-          <a>Other Page</a>
-        </Link>
+        <p>Home</p>
       </div>
     )
   }
