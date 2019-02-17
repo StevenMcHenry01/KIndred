@@ -1,22 +1,24 @@
-webpackHotUpdate("static\\development\\pages\\index.js",{
+webpackHotUpdate("static\\development\\pages\\signup.js",{
 
-/***/ "./components/Home/Home.js":
-/*!*********************************!*\
-  !*** ./components/Home/Home.js ***!
-  \*********************************/
+/***/ "./components/SignUp/Signup.js":
+/*!*************************************!*\
+  !*** ./components/SignUp/Signup.js ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Home; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Signup; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.browser.umd.js");
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\dev\\Web\\personal\\Kindred\\frontend\\components\\Home\\Home.js";
+/* harmony import */ var _Global_Styles_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Global_Styles/Form */ "./components/Global_Styles/Form.js");
+/* harmony import */ var _ErrorMesage_ErrorMessage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ErrorMesage/ErrorMessage */ "./components/ErrorMesage/ErrorMessage.js");
+var _jsxFileName = "C:\\dev\\Web\\personal\\Kindred\\frontend\\components\\SignUp\\Signup.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -36,70 +38,103 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  query ALL_USERS_QUERY {\n    users {\n      id\n      name\n      location\n      disorders\n    }\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
-var ALL_USERS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 
-var Home =
+
+var Signup =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Home, _Component);
+  _inherits(Signup, _Component);
 
-  function Home() {
-    _classCallCheck(this, Home);
+  function Signup() {
+    _classCallCheck(this, Signup);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Home).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Signup).apply(this, arguments));
   }
 
-  _createClass(Home, [{
+  _createClass(Signup, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Global_Styles_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 10
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 11
         },
         __self: this
-      }, "Homepage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
-        query: ALL_USERS_QUERY,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 12
         },
         __self: this
-      }, function (payload) {
-        console.log(payload);
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24
-          },
-          __self: this
-        }, "Child");
-      }));
+      }, "Sign up for an account"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "email",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }, "email", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "email",
+        placeholder: "email",
+        value: this.state.email,
+        onChange: this.saveToState,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, "name", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "name",
+        placeholder: "name",
+        value: this.state.name,
+        onChange: this.saveToState,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "password",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: this
+      }, "password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "password",
+        placeholder: "password",
+        value: this.state.password,
+        onChange: this.saveToState,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }))));
     }
   }]);
 
-  return Home;
+  return Signup;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
@@ -107,4 +142,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.6e29594a939a8838e4f3.hot-update.js.map
+//# sourceMappingURL=signup.js.4fbf010dc2d2e4c328a5.hot-update.js.map

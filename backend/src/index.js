@@ -5,6 +5,7 @@ const db = require('./db')
 
 const server = createServer()
 
+// express middleware to allow cookies in our requests
 server.express.use(cookieParser())
 
 // Starts up Express GraphQL server!

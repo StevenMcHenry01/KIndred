@@ -315,7 +315,7 @@ var Nav = function Nav() {
     },
     __self: this
   }, "Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/connections",
+    href: "/signup",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
@@ -327,8 +327,8 @@ var Nav = function Nav() {
       lineNumber: 13
     },
     __self: this
-  }, "Connections")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/journal",
+  }, "Sign Up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/connections",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
@@ -338,6 +338,19 @@ var Nav = function Nav() {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
+    },
+    __self: this
+  }, "Connections")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/journal",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
     },
     __self: this
   }, "Journal")));
