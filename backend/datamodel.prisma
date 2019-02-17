@@ -1,5 +1,25 @@
+enum Permission {
+  ADMIN
+  USER
+  PERMISSIONUPDATE
+}
+
+enum Disorder {
+  DEPRESSION
+  ANXIETY
+  OCD
+  ADHD
+  BIPOLAR
+}
+
 type User {
   id: ID! @unique
   name: String!
-  email: String!
+  email: String! @unique
+  password: String!
+  resetToken: String
+  resetTokenExpiry: Float
+  permissions: [Permission]
+  location: String
+  disorders: [Disorder]
 }

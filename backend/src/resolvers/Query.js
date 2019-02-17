@@ -1,7 +1,12 @@
-const Query = {
-  hi(parent, args, ctx, info) {
-    console.log(args)
-  }
-};
+const { forwardTo } = require('prisma-binding')
 
-module.exports = Query;
+const Query = {
+  // example of using already creating query in prisma
+  //users: forwardTo('db'),
+  async users(parent, args, ctx, info) {
+    const users = await ctx.db.query.users({}, info)
+    return users
+  },
+}
+
+module.exports = Query

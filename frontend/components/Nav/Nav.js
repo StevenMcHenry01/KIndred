@@ -6,8 +6,14 @@ const Nav = () => (
     <Link href="/">
       <a>Home</a>
     </Link>
-    <Link href="/page">
-      <a>Other Page</a>
+    <Link href="/account">
+      <a>Account</a>
+    </Link>
+    <Link href="/connections">
+      <a>Connections</a>
+    </Link>
+    <Link href="/journal">
+      <a>Journal</a>
     </Link>
   </NavStyles>
 )

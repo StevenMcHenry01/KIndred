@@ -2,14 +2,14 @@ import Link from 'next/link'
 
 import React, { Component } from 'react'
 
-class page extends Component {
+class connections extends Component {
   render() {
     return (
       <div>
-        <p>Other Page</p>
+        <p>Connections</p>
       </div>
     )
   }
 }
 
-export default page
+export default connections
