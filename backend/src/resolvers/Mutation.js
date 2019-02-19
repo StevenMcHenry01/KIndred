@@ -32,6 +32,33 @@ const Mutations = {
     // return user to browser
     return user
   },
+  async signin(parent, args, ctx, info) {
+    const { email, password } = args
+    // 1. check if there is a user with that email
+    const user = await ctx.db.query.user({ where: { email } })
+    if (!user) {
+      throw new Error(`No such user found for email: ${email}`)
+    }
+    // 2. check if their password is correct
+    const valid = await bcrypt.compare(password, user.password)
+    if (!valid) {
+      throw new Error(`Invalid Password!`)
+    }
+    // 3. generate jwt token
+    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET)
+    // 4. set the cookie with the token
+    ctx.response.cookie('token', token, {
+      // wont allow javascript to access cookie
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
+    })
+    // 5. return user
+    return user
+  },
+  signout(parent, args, ctx, info) {
+    ctx.response.clearCookie('token')
+    return { message: 'Goodbye!' }
+  },
 }
 
 module.exports = Mutations

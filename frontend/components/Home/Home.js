@@ -16,15 +16,13 @@ const ALL_USERS_QUERY = gql`
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <p>Homepage</p>
-        <Query query={ALL_USERS_QUERY}>
-          {payload => {
-            console.log(payload)
-            return <p>Child</p>
-          }}
-        </Query>
-      </div>
+      <Query query={ALL_USERS_QUERY}>
+        {({ data, error, loading }) => {
+          if (loading) return <p>Loading...</p>
+          if (error) return <p>ERROR: {error}</p>
+          return <p>Hey you have {data.users.length} users!</p>
+        }}
+      </Query>
     )
   }
 }

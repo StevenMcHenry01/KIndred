@@ -3,6 +3,7 @@ import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 import Form from '../Global_Styles/Form'
 import Error from '../ErrorMesage/ErrorMessage'
+import { CURRENT_USER_QUERY } from '../User/User'
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
@@ -25,7 +26,11 @@ export default class Signup extends Component {
   }
   render() {
     return (
-      <Mutation mutation={SIGNUP_MUTATION} variables={this.state}>
+      <Mutation
+        mutation={SIGNUP_MUTATION}
+        variables={this.state} // auto refetches querys when mutation occurs (shows user loggin in immediately)
+        refetchQueries={[{ query: CURRENT_USER_QUERY }]}
+      >
         {(signup, { error, loading }) => {
           return (
             <Form
