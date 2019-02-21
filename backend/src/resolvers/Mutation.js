@@ -65,6 +65,7 @@ const Mutations = {
   },
 
   async requestReset(parent, args, ctx, info) {
+    console.log(args)
     //1. Check if this is a real user
     const user = await ctx.db.query.user({ where: { email: args.email } })
     if (!user) {
@@ -78,7 +79,6 @@ const Mutations = {
       where: { email: args.email },
       data: { resetToken, resetTokenExpiry },
     })
-    console.log(res)
     return { message: 'Thanks!' }
     //3. Email them the reset token
   },
@@ -88,6 +88,7 @@ const Mutations = {
     if (args.password !== args.confirmPassword) {
       throw new Error('Oops! Passwords do not match.')
     }
+    console.log(args)
     //2. Check if its a legit reset token
     //3. Check if its expired
     const [user] = await ctx.db.query.users({

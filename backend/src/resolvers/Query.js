@@ -3,10 +3,6 @@ const { forwardTo } = require('prisma-binding')
 const Query = {
   // example of using already creating query in prisma
   //users: forwardTo('db'),
-  async users(parent, args, ctx, info) {
-    const users = await ctx.db.query.users({}, info)
-    return users
-  },
   me(parent, args, ctx, info) {
     // check if there is a current user ID
     if (!ctx.request.userId) {
