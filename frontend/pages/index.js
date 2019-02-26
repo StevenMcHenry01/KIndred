@@ -3,11 +3,7 @@ import Home from '../components/Home/Home'
 
 class index extends Component {
   render() {
-    return (
-      <div>
-        <Home />
-      </div>
-    )
+    return <Home />
   }
 }
 
