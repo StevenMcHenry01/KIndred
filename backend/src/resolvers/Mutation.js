@@ -7,7 +7,6 @@ const { transport, makeANiceEmail } = require('../mail')
 
 const Mutations = {
   async signup(parent, args, ctx, info) {
-    console.log(args)
     args.email = args.email.toLowerCase()
     // hash password and generate salt (allows for multiple of same password to have different hashes)
     const password = await bcrypt.hash(args.password, 10)
@@ -67,7 +66,6 @@ const Mutations = {
   },
 
   async requestReset(parent, args, ctx, info) {
-    console.log(args)
     //1. Check if this is a real user
     const user = await ctx.db.query.user({ where: { email: args.email } })
     if (!user) {
@@ -136,6 +134,21 @@ const Mutations = {
       maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year cookie
     })
     //8. return the new User
+    return updatedUser
+  },
+
+  async setdisorder(parent, args, ctx, info) {
+    console.log(args)
+    // create user in the database
+    const updatedUser = await ctx.db.mutation.updateUser({
+      where: {
+        email: user.email,
+      },
+      data: {
+        disorders,
+      },
+    })
+    // return user to browser
     return updatedUser
   },
 }

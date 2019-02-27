@@ -5,17 +5,12 @@ type SuccessMessage {
 }
 
 type Mutation {
-  signup(
-    name: String!
-    email: String!
-    password: String!
-    location: String
-    disorders: [Disorder]
-  ): User!
+  signup(name: String!, email: String!, password: String!, location: String): User!
   signin(email: String!, password: String!): User!
   signout: SuccessMessage
   requestReset(email: String!): SuccessMessage
   resetPassword(resetToken: String!, password: String!, confirmPassword: String!): User!
+  setdisorder(disorders: [Disorder]): User!
 }
 
 type Query {
